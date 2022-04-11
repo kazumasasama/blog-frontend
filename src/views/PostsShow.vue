@@ -4,6 +4,8 @@
       <hr />
       <hr />
       <p>ID: {{ post.id }}</p>
+      <button @click="this.$router.push(`/posts/${post.id}/edit`)">Edit</button>
+      <button @click="destroyPost()">Delete</button>
       <h3>{{ post.title }}</h3>
       <p>{{ post.body }}</p>
       <p>
@@ -31,6 +33,12 @@ export default {
       axios.get(`posts/${this.$route.params.id}`)
         .then((res) => {
           this.post = res.data;
+        })
+    },
+    destroyPost() {
+      axios.delete(`posts/${this.$route.params.id}`)
+        .then(() => {
+          this.$router.push("/posts");
         })
     },
   },

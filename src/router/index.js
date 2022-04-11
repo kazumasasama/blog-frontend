@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import PostsIndex from '@/views/PostsIndex.vue'
 import PostsShow from '@/views/PostsShow.vue'
 import PostsNew from '@/views/PostsNew.vue'
+import PostsEdit from '@/views/PostsEdit.vue'
 import SignupView from "@/views/SignupView.vue";
 import LoginView from "@/views/LoginView.vue";
 import LogoutView from "@/views/LogoutView.vue";
@@ -33,12 +34,16 @@ const routes = [
     component: PostsIndex
   },
   {
+    path: '/posts/new',
+    component: PostsNew
+  },
+  {
     path: '/posts/:id',
     component: PostsShow
   },
   {
-    path: '/posts/new',
-    component: PostsNew
+    path: '/posts/:id/edit',
+    component: PostsEdit
   },
   {
     path: '/about',

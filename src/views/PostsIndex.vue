@@ -3,6 +3,7 @@
     <div v-for="post in posts" :key="post.id" @click="this.$router.push(`/posts/${post.id}`)">
       <hr />
       <hr />
+      <p>Click to see more info</p>
       <p>ID: {{ post.id }}</p>
       <h3>Title: {{ post.title }}</h3>
       <img class="post-img" :src="post.image" />
