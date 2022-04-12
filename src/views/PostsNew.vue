@@ -1,3 +1,29 @@
+<template>
+  <div class="signup container">
+    <div class="row">
+      <div class="col-sm-6">
+        <form v-on:submit.prevent="submit()">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">New Post</div>
+            <div class="card-body text-secondary">
+              <div>
+                <input placeholder="Title" type="text" v-model="newPost.title" />
+              </div>
+              <div>
+                <input placeholder="Body" type="text" v-model="newPost.body" />
+              </div>
+              <div>
+                <input placeholder="Image URL" type="text" v-model="newPost.image" />
+              </div>
+              <input type="submit" value="Submit" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script>
 import axios from "axios";
 
@@ -23,32 +49,3 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="signup">
-    <form v-on:submit.prevent="submit()">
-      <h1>New Post</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label></label>
-        <p>
-          Title
-          <input type="text" v-model="newPost.title" />
-        </p>
-        <p>
-          Body
-          <input type="text" v-model="newPost.body" />
-        </p>
-        <p>
-          Image URL
-          <input type="text" v-model="newPost.image" />
-        </p>
-        <p>
-          <input type="submit" value="Submit" />
-        </p>
-      </div>
-    </form>
-  </div>
-</template>

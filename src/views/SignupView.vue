@@ -25,29 +25,31 @@ export default {
 </script>
 
 <template>
-  <div class="signup">
+  <div class="signup container">
+
+    <ul>
+      <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+    </ul>
+
     <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Name:</label>
-        <input type="text" v-model="newUserParams.name" />
+      <div class="card border-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Signup</div>
+        <div class="card-body text-secondary">
+          <div>
+            <input placeholder="Name" type="text" v-model="newUserParams.name" />
+          </div>
+          <div>
+            <input placeholder="Email" type="email" v-model="newUserParams.email" />
+          </div>
+          <div>
+            <input placeholder="Password" type="password" v-model="newUserParams.password" />
+          </div>
+          <div>
+            <input placeholder="confirm password" type="password" v-model="newUserParams.password_confirmation" />
+          </div>
+          <input type="submit" value="Submit" />
+        </div>
       </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
-      </div>
-      <input type="submit" value="Submit" />
     </form>
   </div>
 </template>
