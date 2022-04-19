@@ -7,6 +7,7 @@ import PostsEdit from '@/views/PostsEdit.vue'
 import SignupView from "@/views/SignupView.vue";
 import LoginView from "@/views/LoginView.vue";
 import LogoutView from "@/views/LogoutView.vue";
+import VueMultiSelectTest from "@/views/VueMultiSelectTest.vue";
 
 const routes = [
   {
@@ -44,6 +45,10 @@ const routes = [
   {
     path: '/posts/:id/edit',
     component: PostsEdit
+  },
+  {
+    path: '/vue_multi_select',
+    component: VueMultiSelectTest
   },
   {
     path: '/about',
